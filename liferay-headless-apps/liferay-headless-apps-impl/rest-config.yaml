@@ -1,0 +1,11 @@
+apiDir: "../liferay-headless-apps-api/src/main/java"
+apiPackagePath: "com.liferay.headless.apps"
+application:
+    baseURI: "/headless-apps"
+    className: "HeadlessAppsApplication"
+    name: "Liferay.Headless.Apps"
+author: "Vitaliy Koshelenko"
+forcePredictableOperationId: false
+forcePredictableSchemaPropertyName: false
+generateBatch: false
+generateGraphQL: false

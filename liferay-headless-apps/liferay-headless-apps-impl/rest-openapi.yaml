@@ -1,0 +1,135 @@
+components:
+    schemas:
+        App:
+            description: An application.
+            properties:
+                appId:
+                    description: The application's identificator.
+                    type: string
+                name:
+                    description: The application's name.
+                    type: string
+                description:
+                    description: The application's description.
+                    type: string
+                logoUrl:
+                    description: The application's Logo URL.
+                    type: string
+                link:
+                    description: The application's link.
+                    type: string
+            type: object
+info:
+    description: "Liferay Apps Headless API"
+    license:
+        name: Apache 2.0
+        url: http://www.apache.org/licenses/LICENSE-2.0.html
+    title: Liferay Apps Headless API
+    version: v1.0
+openapi: 3.0.1
+paths:
+    "/apps":
+        get:
+            description: Get all apps
+            operationId: getApps
+            responses:
+                200:
+                    content:
+                        application/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/App"
+                                type: array
+                        application/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/App"
+                                type: array
+                    description: default response
+            tags: ["App"]
+        post:
+            description: Adds a new app
+            operationId: addApp
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/App"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/App"
+            responses:
+                200:
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/App"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/App"
+                    description: default response
+            tags: ["App"]
+    /apps/{appId}:
+        delete:
+            description: Removes the app
+            operationId: deleteApp
+            parameters:
+                - in: path
+                  name: appId
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                204:
+                    content:
+                        application/json: {}
+                        application/xml: {}
+            tags: ["App"]
+        get:
+            description: Retrieves the app
+            operationId: getApp
+            parameters:
+                - in: path
+                  name: appId
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/App"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/App"
+                    description: default response
+            tags: ["App"]
+        patch:
+            description: Updates the app
+            operationId: updateApp
+            parameters:
+                - in: path
+                  name: appId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/App"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/App"
+            responses:
+                200:
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/App"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/App"
+                    description: "App successfully updated"
+            tags: ["App"]
