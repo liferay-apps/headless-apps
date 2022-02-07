@@ -1,0 +1,25 @@
+{
+  "apps": [
+    {
+      "appId": "google",
+      "name": "Google",
+      "description": "Google App",
+      "logoUrl": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      "link": "https://www.google.com"
+    },
+    {
+      "appId": "facebook",
+      "name": "Facebook",
+      "description": "Facebook App",
+      "logoUrl": "https://www.facebook.com/images/fb_icon_325x325.png",
+      "link": "https://www.facebook.com"
+    },
+    {
+      "appId": "linkedin",
+      "name": "LinkedIn",
+      "description": "LinkedIn App",
+      "logoUrl": "https://www.linkedin.com/images/logo_300x100.png",
+      "link": "https://www.linkedin.com"
+    }
+  ]
+}
